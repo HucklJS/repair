@@ -24,7 +24,9 @@
               </a>
             </div>
             <!-- /.navbar__contacts -->
-            <button class="button navbar__button">Перезвоните мне</button>
+            <button class="button navbar__button" id="button-for-modal">
+              Перезвоните мне
+            </button>
           </div>
           <!-- /.navbar__info -->
         </div>
@@ -109,6 +111,16 @@
               </button>
             </form>
             <!-- /.form offer__form -->
+            <div class="offer-callback callback">
+              <div class="offer-callback__phrase">
+                Наш менеджер перезвонит Вам в течение 60 секунд
+              </div>
+              <div class="offer-callback__phrase">
+                или перезвоните нам сами
+                <span class="offer-callback__phone">+7 (495) 42-251-31</span>
+              </div>
+            </div>
+            <!-- offer-callback -->
           </div>
           <!-- offer-block -->
         </div>
@@ -116,5 +128,14 @@
       </section>
       <!-- /.offer -->
     </main>
+
+    <div class="modal" id="modal">
+      <div class="modal-dialog">
+        <h4 class="modal-dialog__title">Всплывающее окно</h4>
+        <button class="modal-dialog__close" id="close-modal">&times;</button>
+      </div>
+    </div>
+
+    <script src="js/modal.js"></script>
   </body>
 </html>

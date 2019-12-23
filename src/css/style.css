@@ -50,6 +50,11 @@ img {
   cursor: pointer;
 }
 
+.button:focus {
+  outline: none;
+  border: 1px solid #333333;
+}
+
 .section {
   padding: 90px 0;
 }
@@ -69,11 +74,25 @@ img {
   border-radius: 10px;
   padding: 20px 26px;
   font-size: 15px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #ffd200;
+}
+
+.callback {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 24px;
 }
 
 @media (max-width: 1200px) {
   .container {
     width: 760px;
+  }
+  .offer-callback {
+    margin-top: 10px;
   }
 }
 
@@ -330,6 +349,25 @@ img {
   min-height: 70px;
 }
 
+.offer-callback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.offer-callback__phrase {
+  max-width: 47%;
+}
+
+.offer-callback__phone {
+  display: block;
+  font-family: "Museo Sans Bold", sans-serif;
+  font-weight: 700;
+}
+
 @media (max-width: 1200px) {
   .offer {
     background-size: cover;
@@ -351,5 +389,43 @@ img {
     width: 100%;
     padding-right: 0;
   }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-dialog {
+  position: relative;
+  margin: auto;
+  max-width: 450px;
+  min-height: 200px;
+  width: 90%;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.modal-dialog__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-dialog__close:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

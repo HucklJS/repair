@@ -19,6 +19,9 @@ img
     &:hover
         background-color: lighten($main-color, 10%)
         cursor: pointer
+    &:focus
+        outline: none
+        border: 1px solid $text-color
 .section
     padding: 90px 0
     &-title
@@ -31,10 +34,20 @@ img
     border-radius: 10px
     padding: 20px 26px
     font-size: 15px
+    outline: none
+    &:focus
+        border-color: $main-color
+.callback
+    margin-top: 30px
+    font-size: 15px
+    line-height: 24px
 
 @media (max-width:  1200px)
     .container
         width: 760px
+    .offer
+        &-callback
+            margin-top: 10px
 
 @media (max-width:  768px)
     .container

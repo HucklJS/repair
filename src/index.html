@@ -320,16 +320,25 @@
               <span class="form__subtitle">
                 Для этого заполните форму ниже
               </span>
-              <form action="#">
+              <form action="#" id="brif-form">
                 <input
+                  name="text"
                   type="text"
                   class="input brif__input"
                   placeholder="Ваше имя"
                 />
                 <input
+                  id="phone"
+                  name="phone"
                   type="tel"
                   class="input brif__input"
                   placeholder="Ваш телефон"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  class="input brif__input"
+                  placeholder="Ваш email"
                 />
                 <button class="button brif__button">
                   Рассчитать стоимость
@@ -368,8 +377,49 @@
     <!-- <script src="js/ourSlick.js"></script> -->
     <script src="js/startOwnCaroisel.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script>
       new WOW().init();
+    </script>
+    <script>
+      $("#brif-form").validate({
+        rules: {
+          text: {
+            required: true,
+            rangelength: [2, 15]
+          },
+          phone: {
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          text: {
+            required: "Пожалуйста, введите ваше имя",
+            rangelength: "Имя должно быть больше 2 и меньше 15 символов"
+          },
+          phone: {
+            required: "Введите ваш телефон"
+          },
+          email: {
+            required: "Заполните поле",
+            email: "Введите корректный email в формате name@domain.com"
+          }
+          // email: {
+          //   required: "We need your email address to contact you",
+          //   email: "Your email address must be in the format of name@domain.com"
+          // }
+        },
+        errorClass: "invalid",
+        errorElement: "div"
+      });
+      jQuery(function($) {
+        $("#phone").mask("+7 (999) 999-9999");
+      });
     </script>
   </body>
 </html>

@@ -95,6 +95,10 @@ img {
   cursor: pointer;
 }
 
+.invalid[name] {
+  border: 1px solid red;
+}
+
 @media (max-width: 1200px) {
   .container {
     width: 760px;

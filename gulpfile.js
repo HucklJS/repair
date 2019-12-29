@@ -3,6 +3,7 @@ const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 const tinypng = require("gulp-tinypng-compress");
+const uglify = require("gulp-uglify");
 
 function minifyCss() {
   return (
@@ -15,7 +16,13 @@ function minifyCss() {
 }
 
 function moveJs() {
-  return gulp.src("src/js/*.js").pipe(gulp.dest("dist/js"));
+  return (
+    gulp
+      .src(["src/js/*.js", "!src/js/*.min.js"])
+      // .pipe(uglify()) Предварительно нужно Babel юзнуть
+      .pipe(gulp.src("src/js/*.min.js"))
+      .pipe(gulp.dest("dist/js"))
+  );
 }
 
 function minifyHTML() {
